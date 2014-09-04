@@ -5,7 +5,7 @@ This requires a user to sync their account to steam or sign up via steam and wil
 
 An example is currently available at: http://beta.slugsoc.co.uk/seating-chart/
 
-Intstallation -
+Installation -
 
 This plugin is fairly simple to install, drag and drop into the /wp-content/plugins/ folder.
 
