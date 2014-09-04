@@ -15,6 +15,7 @@ Once installed it will show a seating chart at the Yourwebsite.com/seating-chart
 <h2>Dependencies -</h2> 
 
 Wordpress Obviously
+
 OneAll Social Login Wordpress Plugin with the steam social login configured and enabled.
 
 <h2>Configuration - </h2> 
