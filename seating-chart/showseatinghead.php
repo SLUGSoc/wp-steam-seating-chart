@@ -59,7 +59,7 @@ div.hov:hover div.seat-hover {
 }
 
 </style>
-<link rel="stylesheet" type="text/css" href="/map.css">
+<link rel="stylesheet" type="text/css" href="/wp-content/plugins/seating-chart/map.css">
 <meta http-equiv="refresh" content="300">';
 
 ?>

@@ -4,7 +4,7 @@ Plugin Name: Seating Chart
 Plugin URI: NA
 Description: NA
 Version: 1.0
-Author: Guru3
+Author: Guru3/Jimmez
 Author URI: NA
 License: NA
 */

@@ -1,0 +1,565 @@
+#map {
+    height: 1200px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+    #map .door-bottom {
+        background-image: url('../../images/map/door-bottom.png');
+        height: 26px;
+        width: 50px;
+        margin: 2px;
+        position: absolute;
+    }
+    #map .door-left {
+        background-image: url('../../images/map/door-left.png');
+        height: 50px;
+        width: 26px;
+        margin: 2px;
+        position: absolute;
+    }
+    #map .door-top {
+        background-image: url('../../images/map/door-top.png');
+        height: 26px;
+        width: 50px;
+        margin: 2px;
+        position: absolute;
+    }
+    #map .door-right {
+        background-image: url('../../images/map/door-right.png');
+        height: 50px;
+        width: 26px;
+        margin: 2px;
+        position: absolute;
+    }
+    #map .label {
+        font-size: 12px;
+        position: absolute;
+    }
+    #map .food {
+        background-image: url('../../images/map/food.png');
+        height: 70px;
+        width: 24px;
+        position: absolute;
+    }
+    #map .seat {
+        position: relative;
+        height: 18px;
+        width: 18px;
+        background-color: #ccc;
+        border: 2px solid #333;
+        border-radius: 3px;
+    }
+        #map .seat:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 5px #555;
+        }
+        #map .seat.welcome-seat {
+            background-color: #b976fe;
+            border: 2px solid #8231d4;
+        }
+            #map .seat.welcome-seat:hover {
+                cursor: default;
+                box-shadow: none;
+            }
+        #map .seat.occupied-seat {
+            background-color: #97eaff;
+            border: 2px solid #00ccff;
+        }
+        #map .seat.ingame-seat {
+            background-color: #c8ff93;
+            border: 2px solid #6acc0a;
+        }
+        #map .seat.veteran-seat {
+            background-color: #ffb5d6;
+            border: 2px solid #eb0069;
+        }
+        #map .seat.committee-seat {
+            background-color: #ffca92;
+            border: 2px solid #ff8400;
+        }
+    #map .column {
+        height: 25px;
+        width: 26px;
+        border-radius: 2px;
+        background-color: #666;
+        position: absolute;
+        bottom: -25px;
+        left: 11px;
+    }
+    #map .seat-block {
+        position: absolute;
+    }
+    #map .seat-row {
+        float: left;
+    }
+        #map .seat-row .seat {
+            margin: 1px;
+        }
+    #map .projector-vertical {
+        position: absolute;
+        background-image: url('../../images/map/projector-vertical.png');
+        width: 7px;
+        height: 54px;
+    }
+    #map .projector-horizontal {
+        position: absolute;
+        background-image: url('../../images/map/projector-horizontal.png');
+        width: 54px;
+        height: 7px;
+    }
+    #map .ladies {
+        background-image: url('../../images/map/ladies.png');
+        position: absolute;
+        height: 40px;
+        width: 20px;
+    }
+    #map .gents {
+        background-image: url('../../images/map/gents.png');
+        position: absolute;
+        height: 40px;
+        width: 17px;
+    }
+    
+        
+#d-block {
+    position: relative;
+    height: 420px;
+}
+    #key {
+        position: absolute;
+        height: 250px;
+        width: 200px;
+        right: 150px;
+        top: -10px;
+    }
+        #key .label {
+            width: 150px;
+            font-weight: bold;
+        }
+        #key .ladies {
+            top: 25px;
+        }
+        #key .gents {
+            top: 25px;
+            left: 23px;
+        }
+            #key .gents .label {
+                top: 10px;
+                left: 30px;
+            }
+        #key .projector-vertical {
+            top: 75px;
+            left: 6px;
+        }
+            #key .projector-vertical .label {
+                top: 18px;
+                left: 47px;
+            }
+        #key .food {
+            top: 140px;
+            left: 5px;
+        }
+            #key .food .label {
+                top: 25px;
+                left: 48px;
+            }
+        #key .door-right {
+            top: 220px;
+            left: 3px;
+        }
+            #key .door-right .label {
+                top: 17px;
+                left: 48px;
+            }
+        #key .seat {
+            position: absolute;
+            top: 175px;
+            left: 180px;
+        }
+            #key .seat:hover {
+                box-shadow: none;
+                cursor: default;
+            }
+            #key .seat .label {
+                left: 40px;
+                top: 2px;
+            }
+        #key .occupied-seat {
+            top: 105px;
+        }
+        #key .ingame-seat {
+            top: 140px;
+        }
+        #key .committee-seat {
+            top: 30px;
+        }
+            #key .committee-seat .label {
+                top: 4px;
+            }
+        #key .welcome-seat {
+            top: 70px;
+        }
+            #key .welcome-seat .label {
+                top: 2px;
+            }
+        #key .veteran-seat {
+            top: 210px;
+            display: none;
+        }
+        #key .column {
+            top: 210px;
+            left: 180px;
+        }
+            #key .column .label {
+                left: 42px;
+                top: 4px;
+            }
+    #d-block-corridor {
+        position: absolute;
+        height: 150px;
+    }
+    #toilet-corridor {
+        height: 80px;
+        border: 5px solid #666;
+        border-top: 0;
+        border-bottom: 0;
+        width: 350px;
+        left: 200px;
+        bottom: 0px;
+        position: absolute;
+    }
+        #gents-toilet-door {
+            left: 200px;
+            top: 6px;
+        }
+    #toilets {
+        width: 225px;
+        height: 100px;
+        bottom: 75px;
+        left: 330px;
+        border-bottom: 5px solid #666;
+        position: absolute;
+    }
+        #gents-toilet {
+            bottom: 5px;
+            left: 93px;
+        }
+    #stairs {
+        height: 325px;
+        width: 125px;
+        bottom: 80px;
+        left: 200px;
+        position: absolute;
+        border: 5px solid #666;
+        border-bottom: 0;
+    }
+        #ladies-toilet {
+            left: -30px;
+            bottom: 40px;
+        }
+        #ladies-toilet-door {
+            bottom: 33px;
+        }
+        #tuck-shop {
+            bottom: 10px;
+            left: 10px;
+        }
+    #d-block-room {
+        width: 195px;
+        border: 5px solid #666;
+        border-right: 0;
+        position: absolute;
+        height: 200px;
+        bottom: 200px;
+    }
+        #d-block-room-door {
+            right: -35px;
+            bottom: 5px;
+        }
+        #dmu-label {
+            top: 90px;
+            left: 85px;
+        }
+        #d-block-projector {
+            bottom: 2px;
+            left: 70px;
+        }
+        #d-block-block1 {
+            left: 50px;
+            top: 30px;
+        }
+        #d-block-block2 {
+            right: 51px;
+            top: 30px;
+        }
+        #d-block-block3 {
+            left: 73px;
+            top: 30px;
+        }
+        #d-block-block4 {
+            left: 73px;
+            bottom: 31px;
+        }
+        #d-block-block3 .seat, #d-block-block4 .seat {
+            float: left;
+        }
+    
+#main-hall {
+    position: relative;
+}
+
+    #sleeping-area {
+        border: 5px solid #666;
+        border-right: 0;
+        border-top: 0;
+        position: absolute;
+        right: 0px;
+        height: 410px;
+        width: 200px;
+    }
+        #sleeping-area #sleeping-door {
+            left: -35px;
+        }
+        #sleeping-area #sleeping-label {
+            top: 180px;
+            left: 65px;
+        }
+
+    #welcome-desk {
+        position: absolute;
+        bottom: -125px;
+        left: -5px;
+        border: 5px solid #666;
+        border-top: 0;
+        height: 120px;
+        width: 240px;
+    }
+        #welcome-label {
+            left: 80px;
+        }
+        #welcome-desk .door-bottom {
+            bottom: 0px;
+            left: 5px;
+        }
+        #welcome-desk #entrance-label {
+            bottom: 10px;
+            left: 70px;
+        }
+        #barrier-left, #barrier-right {
+            height: 22px;
+            background-color: #666;
+            position: absolute;
+            top: 20px;
+            width: 80px;
+            border-radius: 0 3px 3px 0;
+        }
+            #barrier-right {
+                right: 0px;
+                border-radius: 3px 0 0 3px;
+            }
+            #barrier-right .seat {
+                position: absolute;
+                left: -24px;
+            }
+            #barrier-left .seat {
+                position: absolute;
+                right: -24px;
+            }
+            
+    #lecture-room {
+        position: absolute;
+        bottom: -125px;
+        width: 555px;
+        right: -5px;
+        height: 120px;
+        border-top: 5px solid #666;
+    }
+    
+    #main-hall-main {
+        border: 5px solid #666;
+        border-bottom: 0;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 790px;
+        height: 550px;
+    }
+        #main-hall-main #block1 {
+            top: 140px;
+            left: 120px;
+        }
+        #main-hall-main #block2 {
+            left: 220px;
+            top: 50px;
+        }
+        #main-hall-main #block3 {
+            left: 220px;
+            top: 168px;
+        }
+        #main-hall-main #block4 {
+            left: 220px;
+            top: 332px;
+        }
+        #main-hall-main #block5 {
+            left: 320px;
+            top: 102px;
+        }
+        #main-hall-main #block6 {
+            left: 420px;
+            top: 102px;
+        }
+        #main-hall-main #block7 {
+            left: 550px;
+            top: 450px;
+        }
+        #main-hall-main #block8 {
+            left: 550px;
+            top: 525px;
+        }
+        #main-hall-main #block7 .seat, #main-hall-main #block8 .seat {
+            float: right;
+        }
+        
+        #visitor-label {
+            top: 65px;
+            left: 43px;
+        }
+        
+        #visitor-seats {
+            top: 40px;
+            left: 45px;
+        }
+        #visitor-seats .seat {
+            float: left;
+        }
+        
+        #toilet-door1 {
+            left: 260px;
+        }
+        #toilet-door2 {
+            left: 320px;
+        }
+        #loading-door {
+            top: 480px;
+        }
+        #projector-corner {
+            background-image: url("../../images/map/projector.png");
+            height: 138px;
+            width: 140px;
+            position: absolute;
+        }
+        #projector-label {
+            left: 80px;
+            top: 10px;
+        }
+        #storage-label {
+            left: 610px;
+            top: 475px;
+        }
+        #left-projector {
+            left: 2px;
+            top: 250px;
+        }
+        #bottom-projector {
+            bottom: 2px;
+            left: 400px;
+        }
+        
+.hover-container {
+    position: absolute;
+    z-index: 4000;
+    left: 25px;
+    top: -20px;
+}
+.seat .preview-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+.seat-hover {
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    display:none;
+    padding-bottom:50px;
+}
+    .seat-hover .head-box {
+        width: 100%;
+        height: 52px;
+    }
+        .seat-hover .avatar {
+		text-align: center;
+		
+        }
+            .seat-hover  .avatar img {
+                position: relative;
+                border-radius: 2px;
+		height:52px !important;
+		border: 2px solid #e30000;
+            }
+                .occupied-seat .seat-hover .avatar {
+                    border: 2px solid #8ae5ff;
+                }
+                .ingame-seat .seat-hover .avatar {
+                    border: 2px solid #c0ff47;
+                }
+        .seat-hover .main-info {
+	color: white;
+        font-weight: bold;
+        font-size: 13px;
+        white-space: nowrap;
+		position:relative;
+        }
+            .occupied-seat .seat-hover .main-info {
+                color: #8ae5ff;
+            }
+            .ingame-seat .seat-hover .main-info {
+                color: #c0ff47;
+            }
+    .seat-hover .seat-number, .seat-hover .steam-name {
+        color: white;
+        font-weight: bold;
+        font-size: 13px;
+        margin-top: 10px;
+        white-space: nowrap;
+    }
+    .seat-hover .favourite {
+        color: white;
+        font-size: 12px;
+        margin-top: 10px;
+        white-space: nowrap;
+    }
+        #content .seat-hover .favourite ul {
+            margin-left: 20px;
+        }
+        .seat-hover .favourite li {
+            margin-top: 5px;
+        }
+    .seat-hover .mostplayed {
+        margin-top: 10px;
+        color: white;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+        #content .seat-hover .mostplayed ul {
+            list-style-type: none;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+            .seat-hover .mostplayed li {
+                line-height: 20px;
+                height: 20px;
+                margin-bottom: 5px;
+            }
+                .seat-hover .mostplayed li img {
+                    height: 20px;
+                    width: 20px;
+                    display: block;
+                    float: left;
+                    margin-right: 5px;
+                }
+    .seat-hover h3 {
+        font-size: 13px;
+    }
