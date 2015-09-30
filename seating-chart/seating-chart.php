@@ -40,7 +40,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // hook for earliest (use this to catch post)
 function doseats() {
 	if (isset($_POST['seat'])) {
-		define( "DONOTCACHEPAGE", true );
 		include('wp-content/plugins/seating-chart/doseating.php');
 	}
 }
@@ -60,6 +59,7 @@ add_action( 'send_headers', 'doseatredirect' );
 function dochart($in) {
 	global $post;
 	if ( $post->post_name == 'seating-chart' ) {
+		define( "DONOTCACHEPAGE", true );
 		$in = "";
 		include('wp-content/plugins/seating-chart/showseating.php');
 	}
@@ -72,6 +72,7 @@ add_filter('the_content', 'dochart');
 function charthead() {
 	global $post;
         if ( $post->post_name == 'seating-chart' ) {
+		define( "DONOTCACHEPAGE", true );
                 include('wp-content/plugins/seating-chart/showseatinghead.php');
         }
 }
