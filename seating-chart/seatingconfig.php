@@ -31,6 +31,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 $datafile = '/var/www/wp-content/plugins/seating-chart/seats.txt';
 $size = 40; // seat size
 $seats = 60; // number of seats
-$columns = 2; // how many sets of tables there are
+$columns = array(1, 2, 2); // how many sets of tables there are
 
 ?>

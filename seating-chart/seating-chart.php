@@ -40,6 +40,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // hook for earliest (use this to catch post)
 function doseats() {
 	if (isset($_POST['seat'])) {
+		define( "DONOTCACHEPAGE", true );
 		include('wp-content/plugins/seating-chart/doseating.php');
 	}
 }

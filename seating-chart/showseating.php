@@ -51,6 +51,7 @@ else {
 }
 ?></p>
 <p class="seating" align="center" style="margin-bottom: 15px">To move seats click again.</p>
+<p class="seating" align="center"><i>Front of the room...</i></p>
 
 <?php
 
@@ -91,16 +92,17 @@ if (strcmp($person, "")) {
 // generate the seating chart!
 $sid=0;
 echo "<table align=\"center\" class=\"seatroot\"><tr>";
-for ($z = 0; $z < $columns; $z++) {
+$collen = $seats/array_sum($columns);
+foreach ($columns as $z => $z2) {
 	if ($z != 0) {
 		echo "<td width=$size></td>";
 	}
 	echo "\n<td><table class=\"main\" >";
 
-	for ($c = 0; $c < ($seats/$columns/2); $c++) {
+	for ($c = 0; $c < $collen; $c++) {
 		echo "\n<tr>";
 
-		for ($d = 0; $d < 2; $d++) {
+		for ($d = 0; $d < $z2; $d++) {
 
 			if ($d == 2) {
 				echo "<td class=\"seating\" width=$size></td>";
@@ -133,6 +135,7 @@ for ($z = 0; $z < $columns; $z++) {
 echo "</tr></table>";
 
 ?>
+<p class="seating" align="center"><i>...back of the room.</i></p>
 
 <p class="seating" align="center"><br><a onclick="document.f.seat.value='delete'; document.f.submit()" href="#">Click here to leave seat.</a></p>
 <p class="seating" align="center">&copy; 2014 Guru3, Jimmez, and what the hey, SLUGSoc too.</p>
