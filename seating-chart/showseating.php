@@ -115,10 +115,10 @@ foreach ($columns as $z => $z2) {
 					if (isset($bigicons[$person]))
 						echo '<div class="hov"><div class="seat-hover"><div class="head-box"><div class="avatar"><img class="hov" src="'.$bigicons[$person].'"><br></div><br><div class="main-info">'.$seattext[$person].'</div></div></div>';
 //						echo '<div class="hov"><div class="seat-hover"><img class="hov" src="'.$bigicons[$person].'"></div>';
-					echo '<img class="hovimg"';
+					echo '<a href="'.$person.'"><img class="hovimg"';
 					if (isset($offline[$person]) && $offline[$person] == 1)
 						echo 'style="opacity: 0.6" ';
-					echo ' src="'.$seaticons[$person].'" title="'.$seattext[$person].'" alt="'.$seattext[$atseats[$sid]].'">';
+					echo ' src="'.$seaticons[$person].'" title="'.$seattext[$person].'" alt="'.$seattext[$atseats[$sid]].'"></a>';
 					if (isset($bigicons[$person]))
 						echo '</div>';
 				}
