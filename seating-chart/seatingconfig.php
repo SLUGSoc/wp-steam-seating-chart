@@ -32,5 +32,37 @@ $datafile = '/var/www/wp-content/plugins/seating-chart/seats.txt';
 $size = 40; // seat size
 $seats = 60; // number of seats
 $columns = array(1, 2, 2); // how many sets of tables there are
+$collengths = array(8, 13, 14);
+
+// seat number lookup table
+$seatlookup = array();
+$sat = 1;
+// column 1
+for ($c = 1; $c <= $collengths[0]; $c++) {
+	$seatlookup[$c] = $sat++;
+}
+// left of column 2
+for ($c = $collengths[0]+1; $c <= $collengths[1]*2+$collengths[0]; $c+=2) {
+	$seatlookup[$c] = $sat++;
+}
+// right of column 2
+//for ($c = $collengths[0]+2; $c <= $collengths[1]*2+$collengths[0]; $c+=2) {
+for ($c = $collengths[1]*2+$collengths[0]; $c > $collengths[0]; $c-=2) { // inverted of above
+	$seatlookup[$c] = $sat++;
+}
+// left of column 3
+for ($c = $collengths[0]+$collengths[1]*2+1; $c <= $collengths[2]*2+$collengths[1]*2+$collengths[0]; $c+=2) {
+	$seatlookup[$c] = $sat++;
+}
+// right of column 3
+for ($c = $collengths[2]*2+$collengths[1]*2+$collengths[0]; $c > $collengths[1]*2+$collengths[0]; $c-=2) {
+	$seatlookup[$c] = $sat++;
+}
+
+// total number of seats
+$seats = 0;
+for ($c = 0; $c < count($columns); $c++) {
+	$seats += $columns[$c] * $collengths[$c];
+}
 
 ?>

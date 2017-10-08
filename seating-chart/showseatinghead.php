@@ -63,6 +63,9 @@ td.seating {
 	width: '.$size.'px;
 	height: '.$size.'px;
 	background-color: #40af20;
+	font-size: x-small;
+	text-align: center;
+	color: #80ff60;
 }
 
 

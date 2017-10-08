@@ -47,10 +47,10 @@ if ($steamUser == NULL && isset($_POST['seat'])) {
 	echo '<b>To use the seating chart, please login with your Steam account by clicking on the right.</b>';
 }
 else {
-	echo 'Click the green square where you want to sit!';
+	echo 'Click the green square where you are sitting!';
 }
 ?></p>
-<p class="seating" align="center" style="margin-bottom: 15px">To move seats click again.</p>
+<p class="seating" align="center" style="margin-bottom: 15px">To move seats click again. You must be logged in and have linked you steam account.</p>
 <p class="seating" align="center"><i>Front of the room...</i></p>
 
 <?php
@@ -92,14 +92,15 @@ if (strcmp($person, "")) {
 // generate the seating chart!
 $sid=0;
 echo "<table align=\"center\" class=\"seatroot\"><tr>";
-$collen = $seats/array_sum($columns);
+//$collen = $seats/array_sum($columns);
+//for ($z = 0; $z < $columns; $z++) {
 foreach ($columns as $z => $z2) {
 	if ($z != 0) {
 		echo "<td width=$size></td>";
 	}
 	echo "\n<td><table class=\"main\" >";
-
-	for ($c = 0; $c < $collen; $c++) {
+#	for ($c = 0; $c < $collen; $c++) {
+	for ($c = 0; $c < $collengths[$z]; $c++) {
 		echo "\n<tr>";
 
 		for ($d = 0; $d < $z2; $d++) {
@@ -124,6 +125,7 @@ foreach ($columns as $z => $z2) {
 				}
 				else {
 					echo "<td class=\"seating\" onclick=\"document.f.seat.value=$sid; document.f.submit()\">";
+					echo "Seat #$seatlookup[$sid]";
 				}
 				echo "</td>";
 			}
